@@ -1,0 +1,23 @@
+AppBundle\Entity\Budget:
+    type: entity
+    table: budgeting
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        user_id:
+            type: integer
+            scale: 10
+            notnull: true
+        category:
+            type: string
+            scale: 255
+        title:
+            type: string
+            scale: 255
+        description:
+            type: text
+        status:
+            type: string
+            scale: 128

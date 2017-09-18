@@ -1,3 +1,10 @@
+Partiendo desde cero e inspirado por un proyecto de prueba para una empresa, comienzo a desarrollar una herramienta diseñada para fomentar una forma más natural y sostenible de relacionarse con la gente de una forma más íntima.
+
+Se tratará de una micro red social que perseguirá permitir la posibilidad a los usuarios de establecer vínculos seguros para establecer un primer contacto con una posible pareja sin exponerse a complicaciones ni a mercadotecnia.
+
+Este proyecto persigue demostrar mi capacidad para desarrollar, desde cero, una herramienta útil para proporcionar un bien añadido a todas aquellas personas que desearían encontrar pareja y que hoy día se encuentran un sin número de 
+
+
 The API Platform framework
 ==========================
 
