@@ -11,12 +11,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class MyTableController extends Controller
 {
-    /**
-     * @Route("/my/table", name="my_table")
-     */
+    protected $entityManager;
+
     public function index(EntityManagerInterface $entityManager)
     {
-        $repository = $entityManager->getDoctrine()->getRepository(MyTable::class)->findAll();
+        $repository = $this->entityManager->getDoctrine()->getRepository(MyTable::class)->findAll();
         /*
         // you can fetch the EntityManager via $this->getDoctrine()
         // or you can add an argument to your action: index(EntityManagerInterface $entityManager)
