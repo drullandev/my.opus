@@ -1,0 +1,60 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Base de datos: `s3test`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `migration_versions`
+--
+
+CREATE TABLE `migration_versions` (
+  `version` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `my_table`
+--
+
+CREATE TABLE `my_table` (
+  `id` int(1) NOT NULL,
+  `name` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `my_table`
+--
+
+INSERT INTO `my_table` (`id`, `name`) VALUES
+(1, 'Test');
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `migration_versions`
+--
+ALTER TABLE `migration_versions`
+  ADD PRIMARY KEY (`version`);
+
+--
+-- Indices de la tabla `my_table`
+--
+ALTER TABLE `my_table`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `my_table`
+--
+ALTER TABLE `my_table`
+  MODIFY `id` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
