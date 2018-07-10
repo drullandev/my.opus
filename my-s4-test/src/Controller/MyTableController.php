@@ -15,7 +15,7 @@ class MyTableController extends Controller
 
     public function index(EntityManagerInterface $entityManager)
     {
-        $repository = $this->entityManager->getDoctrine()->getRepository(MyTable::class)->findAll();
+        $repository = $entityManager->getDoctrine()->getRepository(MyTable::class)->findAll();
         /*
         // you can fetch the EntityManager via $this->getDoctrine()
         // or you can add an argument to your action: index(EntityManagerInterface $entityManager)
