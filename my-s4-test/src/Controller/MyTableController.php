@@ -13,7 +13,6 @@ class MyTableController extends Controller
     public function index()
     {
         echo 'Hello!';
-        //$repository = $this->getDoctrine()->getRepository(MyTable::class)->findAll();
     }
 
 }
