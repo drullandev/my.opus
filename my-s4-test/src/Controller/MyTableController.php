@@ -14,7 +14,8 @@ class MyTableController extends Controller
      */
     public function index()
     {
-
+        $repository = $this->getDoctrine()->getRepository(MyTable::class);
+        /*
         // you can fetch the EntityManager via $this->getDoctrine()
         // or you can add an argument to your action: index(EntityManagerInterface $entityManager)
         $entityManager = $this->getDoctrine()->getManager();
@@ -29,7 +30,7 @@ class MyTableController extends Controller
         $entityManager->flush();
 
         return new Response('Saved new product with id '.$myTable->getId());
-        /*return $this->render('my_table/index.html.twig', [
+        return $this->render('my_table/index.html.twig', [
             'controller_name' => 'MyTableController',
         ]);*/
     }
