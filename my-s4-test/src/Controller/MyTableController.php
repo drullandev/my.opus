@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\MyTable;
+//use App\Repository\MyTableRepository;
+use Doctrine\ORM\EntityManagerInterface;
 
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -12,9 +14,9 @@ class MyTableController extends Controller
     /**
      * @Route("/my/table", name="my_table")
      */
-    public function index()
+    public function index(EntityManagerInterface $entityManager)
     {
-        $repository = $this->getDoctrine()->getRepository(MyTable::class);
+        $repository = $entityManager->getDoctrine()->getRepository(MyTable::class)->findAll();
         /*
         // you can fetch the EntityManager via $this->getDoctrine()
         // or you can add an argument to your action: index(EntityManagerInterface $entityManager)
