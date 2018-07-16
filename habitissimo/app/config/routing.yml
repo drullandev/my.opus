@@ -1,0 +1,13 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+app_bundle_api:
+    type:     rest
+    prefix:   /api
+    resource: "@AppBundle/Resources/config/api-rest-routing.yml"
+
+budgeting:
+    type:     rest
+    host:     localhost
+    resource: "@AppBundle/Controller/BudgetingController.php"

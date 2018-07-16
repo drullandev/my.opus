@@ -1,0 +1,209 @@
+{
+	"variables": [],
+	"info": {
+		"name": "habitissimo",
+		"_postman_id": "6967661e-624c-bee2-6bba-51f8706982c8",
+		"description": "All the budgeting methods",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST NEW BUDGET",
+			"request": {
+				"url": "http://localhost:8000/api/budget/set",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "El título",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "La categoría",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "La descripción",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "emailemail.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "phonenum",
+							"value": "+34677628086",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "La dirección",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE BUDGET",
+			"request": {
+				"url": "http://localhost:8000/api/budget/set/23",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "El título rf",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "La categoría dsf gsd",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "La descripción gdfgwe",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "email@email.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "phonenum",
+							"value": "+34677628086 43 352",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "La dirección ewgewrg",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POPULATE BUDGET BY ID",
+			"request": {
+				"url": "http://localhost:8000/api/budget/populate/14",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "DISCARD BUDGET BY ID",
+			"request": {
+				"url": "http://localhost:8000/api/budget/discard/13",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET BUDGET BY ID",
+			"request": {
+				"url": "http://localhost:8000/api/budget/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET LIST BY PAGE_NUM",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8000/api/budget?page=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"budget"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET LIST BY EMAIL AND PAGE_NUM",
+			"request": {
+				"url": "http://localhost:8000/api/budgeting/list/drullan.dev@gmail.com/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "CATEGORY SUGGEST BY DESCRIPTION",
+			"request": {
+				"url": "http://localhost:8000/api/category/suggest",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "description",
+							"value": "Reformar cocina, cambiando azulejos, suelo, puntos de electricidad y fontanería y techo. Retirada de  muebles antiguos  aproximadamente a partir del mes de junio.",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
