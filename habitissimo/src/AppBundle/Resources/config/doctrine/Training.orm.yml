@@ -1,0 +1,13 @@
+AppBundle\Entity\Training:
+    type: entity
+    table: _training
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        category:
+            type: string
+            scale: 255
+        description:
+            type: text
