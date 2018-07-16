@@ -42,13 +42,13 @@ class ChargeController extends MyController
             $type = 'CC';
 
             //Ok, i don't have those params match anywhere ejem... i'm lost on this point with interfaces lol
-            /*if ( $type == 'CC' ) {
+            if ( $type == 'CC' ) {
                 $finalAmount = $this->chargeRepo->charge('CreditCard', $amount ); 
                 //I Wait 107 as $finalAmount
             } else if ( $type == 'DD' ) {
                 $finalAmount = $this->chargeRepo->charge('DebitDirect', $amount );
                 //I Wait 110 as $finalAmount
-            }*/
+            }
 
             return $finalAmount;
         

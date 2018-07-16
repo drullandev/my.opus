@@ -3,5 +3,5 @@
 namespace App\Libs;
 
 interface ChargeInterface {
-    public function charge();
+    public function charge( $amount );
 }
