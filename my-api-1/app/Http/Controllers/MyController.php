@@ -2,35 +2,54 @@
 
 namespace App\Http\Controllers;
 
+use App;
+
 use Validator;
 use Illuminate\Http\Request;
-
-use Illuminate\Support\Str;
 
 class MyController extends Controller
 {
 
     /**
-     * A simpe validation funnel for entire app
-     * @param $this->rules  // The validation rules from the objects
-     * @param $this->res    // Response  
+     * How the payment type matchs Interface Class
      */
-    public function myValidator()
+    private $paymentType = [
+        'CC' => 'CreditCard',
+        'DD' => 'DebitDirect',
+    ];
+
+    /**
+     * My Charge interface
+     */
+    public function myChargeAmount( $type, $amount )
     {
-        $val = Validator::make( $this->params, $this->rules );
-        if ( $val->fails() ) {
-            $this->res = [ [ 'message' => $val->errors() ],  400 ];
-            return $this->myResponse();
-        } 
+        App::bind( 'ChargeInterface', $this->paymentType[ $type ] );
+        $chargeInterface = App::make( 'ChargeInterface' );  
+        return number_format( $chargeInterface->charge( $amount ), 2, ".", '' );
     }
 
-    public function myResponse()
+    /**
+     * A simpe validation funnel for entire app
+     * @param $params // The params 
+     * @param $rules  // The validation rules from the objects
+     */
+    public function myValidator( $params, $rules )
     {
-        if ( count( $this->res ) != 2 )
+        $validation = Validator::make( $params, $rules );
+        if ( $validation->fails() ) return $this->myResponse( [ [ 'message' => $validation->errors() ],  400 ] );
+    }
+
+    /**
+     * A simpe response funnel for entire app
+     * @param $response    // Response  
+     */
+    public function myResponse( $result )
+    {
+        if ( count( $result ) != 2 )
             return response()->json( [ 'error' => [ 'I haven\' enough data to response...' ] ], 404 );
         
-        $res = response()->json( (array) $this->res[0], $this->res[1] );
-        return $res;
+        $return = response()->json( (array) $result[0], $result[1] );
+        return $return;
     }
     
 }
