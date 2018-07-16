@@ -1,3 +1,2 @@
-The replated postman collection to import
-yourlocation :: my-api-1/public/api/testInterface
+Tryin this GET my-api-1/public/api/testInterface operation as is described (more or less)
 
