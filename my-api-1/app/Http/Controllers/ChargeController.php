@@ -19,14 +19,13 @@ class ChargeController extends MyController
     ];
 
     // HELP ON THIS :: BEGIN
-    /*
+    
         protected $chargeRepo;
 
         public function __construct( ChargeInterface $chargeRepo )
         {
             $this->chargeRepo = $chargeRepo;
         }
-        */
 
         public function testInterface()
         {
