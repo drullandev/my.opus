@@ -19,10 +19,11 @@ use Illuminate\Http\Request;
  * written in different classes and both classes must implement an interface
  * that will enforce a method called charge.
  */
-interface ChargeInterface {
+/*interface ChargeInterface {
     public function charge( $amount );
-}
+}*/
  
+/*
 class CreditCard implements ChargeInterface {
     private $percent = 7;
     public function charge( $amount ) {
@@ -36,6 +37,7 @@ class DebitDirect implements ChargeInterface {
         return ( $amount / 100 ) * ( 100 + $this->percent );
     }
 }
+*/
 
 
 // Payment
